@@ -1,0 +1,35 @@
+
+<!-- 
+Online HTML, CSS and JavaScript editor to run code online.
+-->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href=" {% static 'style/index.css' %}" />
+    <title>Browser</title>
+  </head>
+
+  <body style="background-color: #1a1818;">
+    <div class="card">
+      <p>the data that is  to be shown</p>
+
+      <div  class="data_display">
+        <h>firebase data</h>
+        <p>channel name is {{channel_name}}</p>
+        <p>channel type is {{channel_type}}</p>
+        <p>channel sub is {{channel_sub}}</p>
+        <p>the data is {{entry.Soilmoisture}}</p>
+      </div>
+      {% comment %} <div class="auth_indicator card "> {% endcomment %}
+        {% comment %} connection indication {% endcomment %}
+        {% comment %} <button class="submit" onclick="window.location.href='{% url 'display'%}', ">Proceed</button> {% endcomment %}
+
+      {% comment %} </div> {% endcomment %}
+    <script>
+    </script>
+  </body>
+</html>

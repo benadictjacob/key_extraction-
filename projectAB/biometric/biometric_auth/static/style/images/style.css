@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    background-color: #1a1818;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 900px;
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+  }
+  
+  .text-section h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #4facfe;
+    line-height: 1.2;
+  }
+  
+  .image-section {
+    max-width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .image-section img {
+    max-width: 90%;
+    height: auto;
+  }
+  
+  .button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .sign-in-button, .proceed-button {
+    background-color: #23b403;
+
+    color: white;
+    border: none;
+    padding: 20px 50px;
+    border-radius: 20px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-top: 2px;
+    margin-bottom: 3px;
+  }
+  
+  .sign-in-button:hover, .proceed-button:hover {
+    background-color: #015814;
+    transform: translateY(-3px);
+  }
+  
+  .dynamic-content {
+    display: none;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .dynamic-content h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  select {
+    width: 80%;
+    padding: 12px;
+    font-size: 1.1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+  }
+  
+  select:focus {
+    outline: none;
+    border-color: #4facfe;
+  }
+  
+  

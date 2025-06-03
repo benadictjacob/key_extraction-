@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}My Website{% endblock %}</title>
+    <style>
+      /* Basic card styling */
+      main {
+        display: flex;
+        height: 100vh;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: #ffffff;
+      }
+
+      .card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 20px;
+        background: #ffffff;
+        height: 75vh;
+        width: 15rem;
+        padding: 20px 21px;
+        border-radius: 10px;
+        box-shadow: #ccc 0px 0px 10px;
+      }
+      .card h2 {
+        margin-top: 0;
+      }
+      .card form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .card input {
+        margin-bottom: 10px;
+        {% comment %} padding: 8px; {% endcomment %}
+        border: 1px solid #ccc;
+        {% comment %} border-radius: 5px; {% endcomment %}
+        width: 90%;
+        height :40%;
+        font-size: 10px; /* Increase font size for better visibility */
+        padding: 3px 15px;
+        border-radius: 5px;
+        border-color: # #ffffff;
+      }
+      .card button {
+        background: #099d02;
+        padding: 8px;
+        width: 8rem;
+        height: 25px;
+        outline: none;
+        display: flex;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-weight: 200;
+        font-size: 8px;
+        line-height: 23px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        text-transform: uppercase;
+      }
+      .card button:hover {
+        cursor: pointer;
+        color: #bce44e;
+      }
+      .card a {
+        text-align: center;
+        margin-top: 10px;
+        color: rgb(4, 4, 3);
+        text-decoration: none;
+      }
+      .card a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      {% block card %}
+      <!-- Default card content can go here -->
+      {% endblock %}
+    </main>
+  </body>
+</html>

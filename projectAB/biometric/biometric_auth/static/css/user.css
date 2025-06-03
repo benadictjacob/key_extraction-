@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffffff;
+    color: #ffffff;
+}
+
+/* Container Styling */
+.container {
+    background: #090909;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    width: 300px;
+    text-align: center;
+}
+
+/* Heading */
+h2 {
+    font-size: 15px;
+    margin-bottom: 20px;
+    color: #148203;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.user-info p {
+    font-size: 10px;
+    margin: 10px 0;
+    padding: 10px;
+    background: #0d0d0d;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+button {
+    background: #099d02;
+    color: white;
+    border: none;
+    padding:8px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 9em;
+    transition: all 0.3s ease-in-out;
+}
+
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+    
+    h2 {
+        font-size: 20px;
+    }
+    
+    .user-info p {
+        font-size: 14px;
+    }
+    
+    button {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+}

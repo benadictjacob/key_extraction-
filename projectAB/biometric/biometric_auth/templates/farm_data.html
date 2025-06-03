@@ -1,0 +1,192 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="{% static 'images/logo-no-background.png' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'css/farm1.css' %}" />
+    <title>Smart-Farm | Farm Setup</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="card">
+        <div class="card-header">
+          <div class="logo-container">
+            <img
+              src="{% static 'images/logo-no-background.png' %}"
+              alt="Smart-Farm Logo"
+              class="logo"
+            />
+          </div>
+          <div class="header-content">
+            <h1 class="welcome-text">
+              Welcome to <span class="brand-name">Smart-Farm</span>
+            </h1>
+            <p class="user-greeting">
+              Set up your farm dashboard, {{username}}
+            </p>
+          </div>
+        </div>
+
+        <div class="card-body">
+          <div class="form-section">
+            <label for="farm-id" class="form-label">Farm Identification</label>
+            <input
+              type="text"
+              id="farm-id"
+              class="form-input"
+              placeholder="Enter unique farm ID"
+            />
+            <p class="form-hint">
+              Your ID is what makes your farm unique. It is used to identify
+              your farm and its data. Please make sure to enter a unique ID that
+              is not already in use by another farm.
+            </p>
+          </div>
+
+          <div class="hardware-check">
+            <input type="checkbox" id="hardware-ready" />
+            <label for="hardware-ready">Hardware is ready to connect</label>
+          </div>
+
+          <div class="sensor-selection">
+            <h3 class="section-title">Select Dashboard Sensors</h3>
+            <p class="section-subtitle">
+              Choose which sensors to use in your system
+            </p>
+
+            <div class="sensor-box">
+              <div class="sensor-grid">
+                <div class="sensor-item">
+                  <button class="sensor-button">
+                    <i class="fas fa-thermometer-half sensor-icon"></i>
+                  </button>
+                  <span class="sensor-label">Temperature</span>
+                </div>
+                <div class="sensor-item">
+                  <button class="sensor-button">
+                    <i class="fas fa-wind sensor-icon"></i>
+                  </button>
+                  <span class="sensor-label">Humidity</span>
+                </div>
+                <div class="sensor-item">
+                  <button class="sensor-button">
+                    <i class="fas fa-seedling sensor-icon"></i>
+                  </button>
+                  <span class="sensor-label">Soil Moisture</span>
+                </div>
+                <div class="sensor-item">
+                  <button class="sensor-button">
+                    <i class="fas fa-tint sensor-icon"></i>
+                  </button>
+                  <span class="sensor-label">RainDrop</span>
+                </div>
+                <div class="sensor-item">
+                  <button class="sensor-button">
+                    <i class="fas fa-flask sensor-icon"></i>
+                  </button>
+                  <span class="sensor-label">Water pH</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <button
+            id="create-dashboard-btn"
+            class="primary-button"
+            onclick="special_dash()"
+          >
+            <i class="fas fa-plus-circle button-icon"></i>
+            Create Dashboard
+          </button>
+          <button id="view-existing-btn" class="secondary-button">
+            <i class="fas fa-eye button-icon"></i>
+            View Existing Dashboard
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const registrationComplete = 0;
+
+      // Sensor selection functionality
+      document.querySelectorAll(".sensor-button").forEach((button) => {
+        button.addEventListener("click", function () {
+          this.classList.toggle("selected");
+        });
+      });
+
+      // Create dashboard function
+      function special_dash() {
+        const farmId = document.getElementById("farm-id").value;
+        const hardwareReady = document.getElementById("hardware-ready").checked;
+
+        if (!farmId) {
+          alert("Please enter a farm ID");
+          return;
+        }
+
+        if (!hardwareReady) {
+          alert("Please confirm your hardware is ready to connect");
+          return;
+        }
+
+        // Get selected sensors - FIXED VERSION
+
+        fetch("/owner_dash/", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "X-CSRFToken": "{{ csrf_token }}", // Use template tag instead of hardcoded
+          },
+          body: JSON.stringify({
+            farm_id: farmId,
+          }),
+        })
+          .then((response) => {
+            if (response.ok) {
+              return response.json();
+            } else {
+              throw new Error("Something went wrong");
+            }
+          })
+          .then((data) => {
+            console.log(data);
+            if (data.message === "id  already exists") {
+              alert("This farm ID already exists");
+              window.location.reload();
+            } else if (data.created) {
+              window.location.href = `{% url 'dash' %}?farmid=${farmId}`;
+            }
+          })
+          .catch((error) => {
+            console.error(error);
+            alert("An error occurred. Please try again.");
+          });
+      }
+      // Attach event listeners
+      document
+        .getElementById("create-dashboard-btn")
+        .addEventListener("click", special_dash());
+
+      document
+        .getElementById("view-existing-btn")
+        .addEventListener("click", function () {
+          window.location.href = "{% url 'see' %}";
+        });
+    </script>
+  </body>
+</html>

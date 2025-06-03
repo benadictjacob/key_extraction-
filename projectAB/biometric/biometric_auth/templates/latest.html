@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="{% static 'images/logo-color-bg.png' %}" />
+    <link rel="stylesheet" href="{% static 'css/info2.css' %}" />
+    <title>Smart-Farm</title>
+  </head>
+  <body>
+    <div class="main">
+      <div class="container">
+        <div class="top">
+          <div class="logo">
+            <!-- Add your logo here -->
+          </div>
+        </div>
+
+        <div class="middle">
+          <div class="heading">
+            <p>Secured Access!</p>
+          </div>
+          <div class="para">
+            <p>Please connect your sensor. The system will automatically detect the sensor once it is connected and authenticate successfully</p>
+          </div>
+        </div>
+
+        <div class="input">
+          <select id="options-dropdown">
+            <option value="">Select your sensor</option>
+            <option value="R3o7">R3o7</option>
+            <option value="R2">R2</option>
+            <option value="R3">R3</option>
+          </select>
+        </div>
+
+        <div class="bottom">
+          <button id="hero-content__order-button" class="hero-content__order-button">
+            <div class="p">submit</div>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      {% comment %} document.getElementById('hero-content__order-button').addEventListener('click', function() {
+        const dropdown = document.getElementById('options-dropdown');
+        const selectedValue = dropdown.value;
+
+        if (selectedValue) {
+          // Store the selected sensor in localStorage
+          localStorage.setItem('selectedSensor', selectedValue);
+          alert(`Sensor ${selectedValue} selected. Proceeding to authentication.`);
+          // Redirect to dashboard.html
+          window.location.href = '{% url 'finger' %}';
+        } else {
+          alert('Please select a sensor before proceeding.');
+        }
+      }); {% endcomment %}
+    </script>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #b5bbc9;
+  }
+
+  .container {
+    text-align: center;
+  }
+
+  .fingerprint {
+    position: relative;
+    margin: 20px 0;
+  }
+
+  .fingerprint-section {
+    transition: fill 0.5s ease-in-out;
+  }
+
+  .progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px; /* Reduced font size */
+    font-weight: bold;
+    color:#585E6C;
+  }
+
+  h1 {
+    color: #585E6C;
+    font-size: 24px; /* Reduced font size */
+    margin-bottom: 1.5rem; /* Adjusted margin */
+  }
+
+  button {
+    padding: 8px 16px; /* Reduced padding */
+    font-size: 14px; /* Reduced font size */
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 1.5rem;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  /* Reduce the size of the SVG fingerprint image */
+  .fingerprint svg {
+    width: 150px; /* Reduced width */
+    height: 150px; /* Reduced height */
+  }

@@ -1,0 +1,109 @@
+/* Reset some default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* body {
+  display: flex;
+  justify-content: center;/* Reset some default browser styles */
+  /* * { */
+    /* margin: 0 !important; */
+    /* padding: 0 !important; */
+    /* box-sizing: border-box !important; */
+  /* } */
+   
+  body {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    font-family: Arial, sans-serif !important;
+    background-color: #000000 !important;
+    color: #000000 !important;
+  }
+  
+  .card {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    background: #f8f8f8 !important; /* Changed to off-white */
+    padding: 20px !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+    width: 300px !important;
+    text-align: center !important;
+  }
+  
+  .card h1 {
+    color: #2c3e50 !important;
+    font-size: 1.5rem !important;
+    margin-bottom: 20px !important;
+  }
+  
+  .card p {
+    margin-bottom: 20px !important;
+  }
+  
+  .card button {
+    background-color: #3498db !important;
+    color: #fff !important;
+    border: none !important;
+    padding: 10px 20px !important;
+    font-size: 1rem !important;
+    border-radius: 5px !important;
+    cursor: pointer !important;
+    transition: background-color 0.3s ease !important;
+  }
+  
+  .card button:hover {
+    background-color: #2980b9 !important;
+  
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #6161a0;
+  color: #333;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #f8f8f8; /* Changed to off-white */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+}
+
+.card h1 {
+  color: #2c3e50;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.card p {
+  margin-bottom: 20px;
+}
+
+.card button {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.card button:hover {
+  background-color: #2980b9;
+}

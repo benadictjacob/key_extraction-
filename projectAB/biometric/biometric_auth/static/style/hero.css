@@ -1,0 +1,143 @@
+.hero {
+    display: flex;
+    min-height: calc(100vh - 75px);
+    overflow: hidden;
+  }
+  
+  .hero-image {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 5
+  }
+  
+  .hero-image img {
+    width: 90%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  .hero-image__overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+  
+    background-color: var(--primary-color);
+    z-index: -1;
+  }
+  
+  .hero-image h2 {
+    position: absolute;
+    bottom: 0;
+    padding: 20px;
+  
+    font-family: var(--playfair-display);
+    font-weight: 700;
+    font-size: 120px;
+    line-height: 138px;
+    color: #fff;
+  }
+  
+  .hero-content {
+    flex: 1.22;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  
+  .hero-content-info {
+    padding: 74px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .hero-content-info h1 {
+    font-size: 40px;
+    font-weight: 600px;
+    font-family: var(--playfair-display);
+    color: var(--secondary-color);
+    display: flex;
+    justify-content: center;
+align-items:center ; 
+padding: 15px;
+
+
+ }
+  
+  .hero-content-info p {
+    margin: 32px 0 0 32px;
+  
+    font-family: var(--plus-jakarta-sans);
+    color: var(--secondary-color);
+    font-size: 18px;
+    font-weight: 400;
+  }
+  
+  .hero-content__buttons ,.proceed-button{
+    margin: 41px 0 0 41px;
+  
+    display: flex;
+    flex-wrap: wrap;
+    gap: 36px;
+  }
+  
+  .hero-content__order-button,.proceed-button {
+    padding: 20px;
+    border-radius: 36px;
+    width: 10rem;
+    height: 3rem;
+
+    outline: none;
+    border: none;
+    background: var(--secondary-color);
+  display: flex;
+    cursor: pointer;
+  align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 500;
+    font-size: 12.5px;
+    line-height: 23px;
+  }
+  
+  .hero-content__play-button ,.proceed-button{
+    border: none;
+    outline: none;
+    background: transparent;
+  
+    display: flex;
+    align-items: center;
+    
+    font-size: 16px;
+    line-height: 19px;
+    color: var(--black-200);
+    font-family: var(--plus-jakarta-sans);
+  
+    cursor: pointer;
+  }
+  
+
+  
+  
+  .dynamic-content h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  select {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 70%;
+  }
+
+  select:focus {
+    outline: none;
+    border-color: #4facfe;
+  }

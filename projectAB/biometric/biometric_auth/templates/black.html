@@ -1,0 +1,134 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="{% static 'images/logo-color-bg.png' %}"
+    />
+    <link rel="stylesheet" href="{% static 'css/black2.css' %}" />
+    <title>Smart-Farm</title>
+  </head>
+  <body>
+    <div class="main">
+      <div class="nav">
+        <div class="leftnav">
+          <div class="logo"></div>
+          <div class="logofont">
+            <h1>SMART-FARM</h1>
+          </div>
+        </div>
+        <div class="signuplogin">
+          <div class="login">
+            <button id="log">logout</button>
+          </div>
+        </div>
+      </div>
+      <div class="mid">
+        <div class="left">
+          <div class="top">
+            <div class="up">
+              <h1>REVOLUTIONIZE</h1>
+            </div>
+            <div class="down">
+              <h1>FARMING</h1>
+            </div>
+          </div>
+          <div class="middle">
+            <div class="middleup">
+              <p>Welcome to my webpage</p>
+            </div>
+            <div class="middledown">
+              <p>Are you ready to add your fingerprint?</p>
+            </div>
+          </div>
+          <div class="bottom">
+            <button
+              id="hero-content__order-button"
+              class="hero-content__order-button"
+              onclick="window.location.href='{% url 'check_pass' %}'"
+            >
+              <div class="finger">
+                <img
+                  src="{% static 'images/finger.png' %}"
+                  alt="finger"
+                  height="20px"
+                  width="20px"
+                />
+              </div>
+              <div class="p">Registeration</div>
+            </button>
+            <button
+              id="hero-content__order-button"
+              class="hero-content__order-button"
+              onclick="window.location.href='{% url 'auth_pass' %}'"
+            >
+              <div class="finger">
+                <img
+                  src="{% static 'images/finger.png' %}"
+                  alt="finger"
+                  height="20px"
+                  width="20px"
+                />
+              </div>
+              <div class="p">Authentication</div>
+            </button>
+            <button
+              id="hero-content__order-button"
+              class="hero-content__order-button"
+              onclick="window.location.href='{% url 'check_in' %}'"
+            >
+              <div class="finger">
+                <img
+                  src="{% static 'images/finger.png' %}"
+                  alt="finger"
+                  height="20px"
+                  width="20px"
+                />
+              </div>
+              <div class="p">Check In</div>
+            </button>
+          </div>
+        </div>
+        <div class="right">
+          <div class="box">
+            <div class="image">
+              <img
+                src="{% static 'images/farmer.png' %}"
+                alt="farm"
+                height="300px"
+                width="300px"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      {% comment %} document
+        .getElementById("hero-content__order-button")
+        .addEventListener("click", () => {
+          window.location.href = "info2.html";
+        }); {% endcomment %}
+
+      {% comment %} document.getElementById("signin").addEventListener("click", () => {
+        window.location.href = "info1.html";
+        localStorage.setItem("authMode", "signup");
+      }); {% endcomment %}
+      const registrationComplete = {{ registration_complete }};
+      window.onload = function () {
+        if (registrationComplete==1) {
+          alert("You have already completed the registration");
+
+      }};
+      document.getElementById("log").addEventListener("click", () => {
+        window.location.href = '{% url 'logout' %}';
+        localStorage.setItem("authMode", "login");
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,228 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Press+Start+2P&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0px;
+  margin: 0px;
+}
+
+.main {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  background: #ffffff;
+}
+
+.logo {
+  background-image: url(/images/logo-no-background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 35px;
+  width: 35px;
+}
+.nav {
+  height: 3rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /*background: #003e29;*/
+  padding: 10px;
+}
+.logofont{
+  font-size: 6px;
+  font-weight: 600;
+  color: #000000;
+}
+.hero-content__order-button {
+  background: #000;
+  padding: 20px;
+  border-radius: 36px;
+  width: 10rem;
+  height: 3rem;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  align-self: self-start;
+  color: #fff;
+  font-weight: 500;
+  font-size: 12.5px;
+  line-height: 23px;
+}
+.leftnav {
+  height: 3rem;
+  width: 20%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: beige;
+}
+.signuplogin {
+  height: 2rem;
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+}
+#log {
+  font-size: 10px;
+  font-weight: 700;
+  background: rgb(0, 0, 0);
+  color: #ffffff;
+  padding: 3px 13px;
+  border: 1px solid transparent; 
+  /* border-radius: 10px;*/
+}
+
+#signin {
+  font-size: 10px;
+  border: none;
+  background: rgb(255, 255, 255);
+  color: #010b02;
+  padding: 3px 10px;
+  border: 0.5px solid #212220; 
+  font-weight: 700;
+
+}
+
+#signin:hover {
+  color: #ffffff;
+  background: #099d02;
+}
+
+#log:hover {
+  cursor: pointer;
+  color: #85db80;
+}
+.right {
+  width: 50%;
+  height: 90vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.left {
+  width: 50%;
+  height: 150vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-left: 2rem;
+  gap:30px;
+
+}
+.top {
+  display: flex;
+  height: 5rem;
+  width: 100%;
+  justify-content: center;
+  align-items: self-start;
+  flex-direction: column;
+  padding-left: 2rem;
+}
+.middle {
+  display: flex;
+  height: 5rem;
+  width: 100%;
+  justify-content: center;
+  align-items: self-start;
+  flex-direction: column;
+  padding-left: 2rem;
+}
+.bottom {
+  display: flex;
+  height: 4rem;
+  width: 100%;
+  justify-content: center;
+  align-items: self-start;
+  flex-direction: column;
+  /* gap: 2px; */
+}
+.mid {
+  display: flex;
+  height: 90vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.image {
+  display: flex;
+ 
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  background-size: cover;
+  content: "";
+  height:20rem;
+  width: 20rem;
+  background: url('/images/farmer.png') no-repeat center center;
+  background-size: contain;
+  position: absolute;
+}
+.box {
+  display: flex;
+  height:90vh;
+  width: 30rem;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  background-size: cover;
+}
+.top {
+  color: #bce44e;
+}
+.middle {
+  font-family: "russo", sans-serif;
+  color: rgb(0, 0, 0);
+  font-size: 12px;
+}
+
+.hero-content__order-button {
+  background: #099d02;
+  padding: 8px;
+  width: 9rem;
+  height: 40px;
+  outline: none;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 200;
+  font-size: 8px;
+  line-height: 23px;
+  margin-left: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+gap: 18px;
+margin-top: 1rem;
+text-transform: uppercase;
+}
+.hero-content__order-button:hover {
+  cursor: pointer;
+  color:#bce44e;
+}
+
+
+

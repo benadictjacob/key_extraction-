@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="{% static 'css/info21.css' %}" />
+    <link
+      rel="stylesheet"
+      href="{% static 'images/logo-no-background.png' %}"
+    />
+    <title>Smart-Farm</title>
+  </head>
+  <body>
+    <div class="main">
+      <div class="container" style="height: 50%">
+        <div class="top">
+          <div class="logo">
+            <!-- Add your logo here -->
+            <img
+              style="width: 30px; height: 30px"
+              src="{% static 'images/logo-no-background.png' %}"
+              alt="Logo"
+            />
+          </div>
+        </div>
+
+        <div class="middle">
+          <div class="heading">
+            <p>Permission requested !</p>
+          </div>
+          <div class="para">
+            <p>{{message}}</p>
+          </div>
+        </div>
+
+        <div class="bottom">
+          <button
+            id="hero-content__order-button"
+            class="hero-content__order-button"
+          >
+            <div class="p">back to home</div>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("hero-content__order-button")
+        .addEventListener("click", function () {
+          window.location.href = "{% url 'home' %}";
+        });
+    </script>
+  </body>
+</html>

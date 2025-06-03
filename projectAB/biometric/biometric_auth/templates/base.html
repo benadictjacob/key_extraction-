@@ -1,0 +1,27 @@
+<!-- filepath: /c:/Users/VICTUS/projectAB/biometric/biometric_auth/templates/base.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Biometric Authentication" />
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Biometric Authentication</title>
+    <!-- Correctly referenced static CSS file -->
+    <link rel="stylesheet" href="{% static 'style/index.css' %}" />
+  </head>
+  <body>
+    <div class="card">
+      <h1>Welcome to Biometric Authentication</h1>
+      <p>Are you ready to add your fingerprint?</p>
+      <button
+        class="submit"
+        onclick="window.location.href='{% url 'check_pass' %}'"
+      >
+        Proceed
+      </button>
+    </div>
+  </body>
+</html>

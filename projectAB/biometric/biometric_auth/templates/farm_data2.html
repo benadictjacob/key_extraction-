@@ -1,0 +1,134 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="{% static 'images/logo-no-background.png' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'css/farm1.css' %}" />
+    <link rel="stylesheet" href="/css/farm_data.css" />
+
+    <title>Smart-Farm | Farm Setup</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="card">
+        <div class="card-header">
+          <div class="logo-container">
+            <img
+              src="{% static 'images/logo-no-background.png' %}"
+              alt="Smart-Farm Logo"
+              class="logo"
+            />
+            <!--            <img src="{% static 'images/logo-no-background.png' %}" alt="Smart-Farm Logo" class="logo">
+-->
+          </div>
+          <div class="header-content">
+            <h1 class="welcome-text">
+              Welcome to <span class="brand-name">Smart-Farm</span>
+            </h1>
+            <p class="user-greeting">
+              Set up your farm dashboard, {{username}}
+            </p>
+          </div>
+        </div>
+
+        <div class="card-body">
+          <div class="form-section">
+            <label for="farm-id" class="form-label">Farm Identification</label>
+            <input
+              type="text"
+              id="farm-id"
+              class="form-input"
+              placeholder="Enter unique farm ID"
+            />
+            <p class="form-hint">
+              This unique ID will identify your farm and its data. Please ensure
+              it's not already in use.
+            </p>
+          </div>
+
+          <div class="sensor-selection">
+            <h3 class="section-title">Select Dashboard Sensors</h3>
+            <p class="section-subtitle">
+              Choose which sensors to display on your dashboard
+            </p>
+
+            <div class="sensor-box">
+              <div class="sensor-grid">
+                <div class="sensor-item">
+                  <button class="sensor-button selected">
+                    <i class="fas fa-thermometer-half sensor-icon"></i>
+                  </button>
+                  <span class="sensor-label">Temperature</span>
+                </div>
+                <div class="sensor-item">
+                  <button class="sensor-button selected">
+                    <i class="fas fa-wind sensor-icon"></i>
+                  </button>
+                  <span class="sensor-label">Humidity</span>
+                </div>
+                <div class="sensor-item">
+                  <button class="sensor-button selected">
+                    <i class="fas fa-seedling sensor-icon"></i>
+                  </button>
+                  <span class="sensor-label">Soil Moisture</span>
+                </div>
+                <div class="sensor-item">
+                  <button class="sensor-button">
+                    <i class="fas fa-tint sensor-icon"></i>
+                  </button>
+                  <span class="sensor-label">RainDrop</span>
+                </div>
+                <div class="sensor-item">
+                  <button class="sensor-button">
+                    <i class="fas fa-flask sensor-icon"></i>
+                  </button>
+                  <span class="sensor-label">Water pH</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <button id="view-dashboard-btn" class="primary-button">
+            <i class="fas fa-tachometer-alt button-icon"></i>
+            View Dashboard
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Sensor selection functionality
+      document.querySelectorAll(".sensor-button").forEach((button) => {
+        button.addEventListener("click", function () {
+          this.classList.toggle("selected");
+        });
+      });
+
+      // View dashboard function
+      function view_dash() {
+        const farmId = document.getElementById('farm-id').value;
+        const owner = 1 // Example value (replace if dynamic)
+        window.location.href = `{% url 'dash' %}?farmid=${farmId}`;
+        print(farmId);
+        setTimeout(view_dash, 600000);
+      }
+      // Attach event listener to the button
+      document
+        .getElementById("view-dashboard-btn")
+        .addEventListener("click", view_dash);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>smartfarm</title>
+  <link rel="icon" type="image/png" href="/biometric/biometric_auth/templates/logo-no-background.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="content" id="main-content">
+      <h2>Please connect your sensor</h2>
+      <select id="options-dropdown">
+        <option value="">Select your sensor</option>
+        <option value="Option1">R3o7</option>
+        <option value="Option2">R2</option>
+        <option value="Option3">R3</option>
+      </select>
+      <div class="button-container">
+        <button class="proceed-button" id="proceed-button">Proceed</button>
+      </div>
+    </div>
+
+    <div id="success-message" class="success-box" hidden>
+      <h2>You have successfully connected</h2>
+      <div class="input-box">
+        <label for="user-input">Enter a value:</label>
+        <input type="text" id="user-input" placeholder="Type something...">
+        <button id="submit-button">Submit</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('proceed-button').addEventListener('click', function() {
+      const dropdown = document.getElementById('options-dropdown');
+      const selectedValue = dropdown.value;
+
+      if (selectedValue) {
+        // Hide the main content
+        document.getElementById('main-content').hidden = true;
+
+        // Show the success message
+        document.getElementById('success-message').hidden = false;
+      } else {
+        alert('Please select a sensor before proceeding.');
+      }
+    });
+
+    document.getElementById('submit-button').addEventListener('click', function() {
+      const userInput = document.getElementById('user-input').value;
+      if (userInput) {
+        alert(`You entered: ${userInput}`);
+      } else {
+        alert('Please enter a value before submitting.');
+      }
+    });
+  </script>
+</body>
+</html>
