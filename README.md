@@ -1,4 +1,4 @@
-🔐 Biometric Authentication Web App
+ Biometric Authentication Web App
 This Django-based web application enables biometric authentication using fingerprint data.
 It includes basic web functionality to manage authentication workflows and is built with a focus on security and simplicity.
 
